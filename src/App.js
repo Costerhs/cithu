@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import Header from './component/header/Header';
 import Login from './page/login/Login'
@@ -7,6 +7,13 @@ import Main from './page/main/Main'
 const App = () => {
   const locat = useLocation();
   const [location, setLocation] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem('username')) {
+      navigate('auth')
+    }
+  }, [localStorage.getItem('username')])
 
   useEffect(() => {
     if (locat.pathname === "/auth") {

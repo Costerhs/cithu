@@ -1,7 +1,15 @@
 import './style.scss'
 import { AiFillGithub } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const signOut = () => {
+        localStorage.clear()
+        navigate('auth')
+    }
+
     return (
         <div className='head'>
             <div className="container">
@@ -11,12 +19,12 @@ const Header = () => {
 
                 </div>
                 <div className="head__right">
-                    <button className="head__sign-out">
+                    <button className="head__sign-out" onClick={signOut}>
                         Sign Out
                     </button>
                     <div className="head__user-info">
-                        <img src="https://avatars.githubusercontent.com/u/99422432?v=4" alt="avatar" />
-                        <p className="head__username">Costerhs</p>
+                        <img src={localStorage.getItem('user_avatar')} alt="avatar" />
+                        <p className="head__username">{localStorage.getItem('username')}</p>
                     </div>
                 </div>
             </div>

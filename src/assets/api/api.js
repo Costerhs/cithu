@@ -7,5 +7,11 @@ const instance = axios.create({
 export const userApi = {
     getUser(username) {
         return instance.get(`users/${username}`)
+    },
+    getUserRepos(username) {
+        return instance.get(`users/${username}/repos`)
+    },
+    getUserMorePart(username, partname) {
+        return instance.get(`users/${username}/${partname}`)
     }
 }

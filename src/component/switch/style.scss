@@ -1,0 +1,22 @@
+.switch__type {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 30px;
+    padding-bottom: 14px;
+    .switch__item {
+        display:flex;
+        gap: 4px;
+        cursor: pointer;
+        .switch__active-p {
+            color: rgb(71, 71, 215);
+        }
+        .switch__item-num {
+            background: #40464e;
+            padding: 2px 4px;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+    }
+}

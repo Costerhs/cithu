@@ -1,14 +1,11 @@
-import ReposList from '../../component/repos/ReposList';
 import './style.scss';
-import obj from "../../assets/localData/rep";
+import { getLStorage } from '../../assets/defFunction/defFunction';
+import Content from '../../component/content/Content';
 
 const Main = () => {
-
   return (
     <div className='main'>
-      <div className="container">
-        <ReposList data={obj} />
-      </div>
+      <Content username={getLStorage('username')} />
     </div>
   )
 }

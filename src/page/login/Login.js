@@ -2,19 +2,24 @@ import './style.scss'
 import { AiFillGithub } from 'react-icons/ai'
 import { useState } from 'react'
 import { userApi } from '../../assets/api/api';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [name, setName] = useState('');
     const [isFind, setIsFind] = useState(false);
+    const navigate = useNavigate();
 
-    const getUser = () => {
+    const getUser = (e) => {
         userApi.getUser(name)
             .then(res => {
-                console.log(res.data)
+                localStorage.setItem('username', name)
+                localStorage.setItem('user_avatar', res.data.avatar_url)
+                navigate('/')
             })
             .catch(() => {
                 setIsFind(true)
             })
+        e.preventDefault()
     }
 
     return (
@@ -30,7 +35,7 @@ const Login = () => {
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="login__inp" />
                         {isFind && <p className="login__error">user not found, please try again</p>}
                     </div>
-                    <button type='button' className="login__btn" disabled={!name} onClick={getUser}>
+                    <button type='submit' className="login__btn" disabled={!name} onClick={getUser}>
                         Sign in
                     </button>
                 </form>
