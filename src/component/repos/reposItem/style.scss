@@ -1,0 +1,43 @@
+.ritem {
+    padding: 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    width: 40%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .ritem__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .ritem__name {
+            color: #58a6ff;
+        }
+        .ritem__status {
+            border: 1px solid #30363d;
+            padding: 4px;
+            color: #737c85;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            &:first-letter {
+                text-transform: uppercase
+            }
+        }
+    }
+    .ritem__bot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .ritem__lang, .ritem__desc,.ritem__date {
+            color: #737c85;
+        }
+        .ritem__desc {
+
+        }
+        .ritem__date {
+
+        }
+    }
+}

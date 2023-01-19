@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import Header from './component/header/Header';
+import Login from './page/login/Login'
+import Main from './page/main/Main'
+const App = () => {
+  const locat = useLocation();
+  const [location, setLocation] = useState(false);
 
-function App() {
+  useEffect(() => {
+    if (locat.pathname === "/auth") {
+      setLocation(true);
+    } else {
+      setLocation(false);
+    }
+  }, [locat]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!location && <Header />}
+      <Routes>
+        <Route path='auth' element={<Login />} />
+        <Route path='/' element={<Main />} />
+      </Routes>
     </div>
   );
 }

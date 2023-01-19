@@ -1,0 +1,60 @@
+.head {
+    background: #161b22;
+    .container {
+        padding: 8px 0;
+        display: flex;
+        justify-content:space-between;
+        gap: 5px;
+        flex-wrap: wrap;
+        .head__left {
+            display: flex;
+            align-items: center;
+            .git-icon {
+                padding: 0;
+                margin-right: 16px;
+            }
+            .head__inp, .head__sign-out {
+                width: 100%;
+                background: #0d1117;
+                padding: 6px 10px;
+                border: 1px solid #30363d;
+                border-radius: 6px;
+                color: white;
+                &::placeholder {
+                    color: #a5c3c5;
+                }
+            }
+            .head__sign-out {
+                margin-left: 4px;
+                color: rgb(212, 209, 209);
+                cursor: pointer;
+            }
+        }
+        .head__right {
+            display: flex;
+            // justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            flex-direction: row-reverse;
+            .head__user-info {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                }
+            }
+            .head__sign-out {
+                background: #0d1117;
+                padding: 6px 10px;
+                border: 1px solid #30363d;
+                border-radius: 6px;
+                margin-left: 4px;
+                color: rgb(212, 209, 209);
+                cursor: pointer;
+            }
+        }
+    }
+}
