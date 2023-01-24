@@ -37,7 +37,6 @@ const Content = ({ username, setUserImg }) => {
     useEffect(() => {
         setIsLoad(true)
         setPartOfUserData()
-        console.log(type)
     }, [type])
 
 
@@ -47,7 +46,7 @@ const Content = ({ username, setUserImg }) => {
             <div className="container">
                 <Switch type={type} setType={setType} userData={userData} />
                 {isPartUserData ?
-                    type == 'repos' ?
+                    !isLoad && type == 'repos' ?
                         <Repositories partUserData={partUserData} />
                         : <Follow data={partUserData} />
                     : null}

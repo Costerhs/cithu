@@ -9,6 +9,11 @@
         display:flex;
         gap: 4px;
         cursor: pointer;
+        padding: 4px 6px;
+        border-radius: 6px;
+        &:hover {
+            background: #21262c;
+        }
         .switch__active-p {
             color: rgb(71, 71, 215);
         }
