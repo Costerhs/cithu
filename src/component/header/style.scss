@@ -16,7 +16,7 @@
             .head__inp, .head__sign-out {
                 width: 100%;
                 background: #0d1117;
-                padding: 6px 10px;
+                padding: 6px 14px;
                 border: 1px solid #30363d;
                 border-radius: 6px;
                 color: white;
@@ -28,6 +28,9 @@
                 margin-left: 4px;
                 color: rgb(212, 209, 209);
                 cursor: pointer;
+            }
+            .head__search {
+                position: relative;
             }
         }
         .head__right {
