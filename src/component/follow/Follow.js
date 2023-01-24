@@ -4,11 +4,9 @@ import './style.scss'
 const Follow = ({ data }) => {
     return (
         <div className='follow'>
-            <div className="container">
-                {data.map((el, index) => {
-                    return <FollowItem key={index} name={el.login} avatar={el.avatar_url} />
-                })}
-            </div>
+            {data.map((el, index) => {
+                return <FollowItem key={index} name={el.login} avatar={el.avatar_url} />
+            })}
         </div>
     )
 }

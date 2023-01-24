@@ -1,0 +1,17 @@
+.content {
+    .container {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .content__more {
+            width: 70px;
+            cursor: pointer;
+            background: #272c33;
+            border: 1px solid #5b6269;
+            color: white;
+            padding: 5px 14px;
+        }
+    }
+}

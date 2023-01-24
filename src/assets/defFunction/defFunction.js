@@ -22,4 +22,18 @@ const getLStorage = (name) => {
     return localStorage.getItem(name)
 }
 
-export { setCookie, getCookie, deleteCookie, getLStorage }
+const setUniqValue = (arr) => {
+    return arr.filter((item, pos) => {
+        return arr.indexOf(item) === pos;
+    })
+}
+
+const filterOfRepos = (arr, lang, num) => {
+    return arr.filter(el => {
+        if (lang) {
+            return el.language == lang
+        }
+        return el
+    }).slice(0, num)
+}
+export { setCookie, getCookie, deleteCookie, getLStorage, setUniqValue, filterOfRepos }

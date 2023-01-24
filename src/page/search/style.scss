@@ -1,0 +1,17 @@
+.search {
+    margin-top: 40px;
+    .container {
+        .search__flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .search__item {
+                text-align: center;
+                img {
+                    width: 200px;
+                    border-radius: 100px;
+                }
+            }
+        }
+    }
+}

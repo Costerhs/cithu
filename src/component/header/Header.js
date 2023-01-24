@@ -14,7 +14,7 @@ const Header = () => {
         <div className='head'>
             <div className="container">
                 <div className="head__left">
-                    <AiFillGithub className='git-icon' />
+                    <AiFillGithub className='git-icon' onClick={() => navigate('/')} />
                     <input type="text" className='head__inp' placeholder='Search' />
 
                 </div>

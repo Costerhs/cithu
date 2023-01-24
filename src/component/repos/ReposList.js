@@ -1,11 +1,20 @@
+import { useEffect, useState } from 'react'
+import { filterOfRepos } from '../../assets/defFunction/defFunction';
 import ReposItem from './reposItem/ReposItem'
 import './style.scss'
 
-function ReposList({ data }) {
+function ReposList({ data, paginationNum, langOfRepos }) {
+    const [datas, setDatas] = useState();
+
+    useEffect(() => {
+        let newData = filterOfRepos(data, langOfRepos, paginationNum)
+        setDatas(newData)
+    }, [langOfRepos, paginationNum])
+
     return (
         <div className='repos'>
-            {data && data.length > 1 ?
-                data.map((el) => {
+            {datas && datas.length > 0 ?
+                datas.map((el) => {
                     return <ReposItem key={el.id} info={el} />
                 })
                 : 'публичные репозитории отсутствуют'}
