@@ -24,7 +24,7 @@ const Content = ({ username, setUserImg }) => {
         userApi.getUser(username)
             .then(res => {
                 setUserData(res.data)
-                setUserImg && setUserImg(res.data.avatar_url)
+                setUserImg && setUserImg(res.data)
             });
     }
 

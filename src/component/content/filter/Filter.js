@@ -9,7 +9,7 @@ const Filter = ({ filterArr, langOfRepos, setLangOfRepos }) => {
                 </option>
                 {filterArr && filterArr.length > 0 && filterArr.map((el, ind) => {
                     return <option value={el} selected={el === langOfRepos} className='filter__option'>
-                        {el}
+                        {el ? el : 'Other'}
                     </option>
                 })}
             </select>
