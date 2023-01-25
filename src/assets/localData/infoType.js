@@ -9,12 +9,12 @@ const obj = [
         icon: <BiBook />,
         getNumName: 'public_repos'
     },
-    // {
-    //     title: 'Star Repositories',
-    //     apiName: 'repos',
-    //     icon: <AiOutlineStar />,
-    //     getNumName: 'repos'
-    // },
+    {
+        title: 'Star Repositories',
+        apiName: 'starred',
+        icon: <AiOutlineStar />,
+        getNumName: 'starred'
+    },
     {
         title: 'Followers',
         apiName: 'followers',

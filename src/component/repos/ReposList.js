@@ -9,7 +9,7 @@ function ReposList({ data, paginationNum, langOfRepos }) {
     useEffect(() => {
         let newData = filterOfRepos(data, langOfRepos, paginationNum)
         setDatas(newData)
-    }, [langOfRepos, paginationNum])
+    }, [langOfRepos, paginationNum, data])
 
     return (
         <div className='repos'>

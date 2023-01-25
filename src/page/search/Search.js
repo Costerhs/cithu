@@ -8,10 +8,6 @@ const Search = () => {
     const [userImg, setUserImg] = useState();
     const username = useParams().user;
 
-    useEffect(() => {
-        console.log(userImg)
-    }, [userImg])
-
     return (
         <div className='search'>
             <div className="container">

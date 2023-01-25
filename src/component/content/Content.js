@@ -39,14 +39,12 @@ const Content = ({ username, setUserImg }) => {
         setPartOfUserData()
     }, [type])
 
-
-
     return (
         <div className='content'>
             <div className="container">
                 <Switch type={type} setType={setType} userData={userData} />
                 {isPartUserData ?
-                    !isLoad && type == 'repos' ?
+                    !isLoad && type == 'repos' || type == 'starred' ?
                         <Repositories partUserData={partUserData} />
                         : <Follow data={partUserData} />
                     : null}
